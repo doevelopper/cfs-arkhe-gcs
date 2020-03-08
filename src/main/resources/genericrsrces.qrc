@@ -1,0 +1,49 @@
+<RCC>
+    <qresource prefix="/resources/rsrces" lang="en">
+        <file>rsrces/zoom-out.png</file>
+        <file>rsrces/Activity Monitor.png</file>
+        <file>rsrces/Add.png</file>
+        <file>rsrces/Alert.png</file>
+        <file>rsrces/Blue.png</file>
+        <file>rsrces/circle-alert.png</file>
+        <file>rsrces/circle-check.png</file>
+        <file>rsrces/circle-delete.png</file>
+        <file>rsrces/circle-minus.png</file>
+        <file>rsrces/circle-plus.png</file>
+        <file>rsrces/circle-refresh.png</file>
+        <file>rsrces/Close.png</file>
+        <file>rsrces/Delete.png</file>
+        <file>rsrces/gear-gold.png</file>
+        <file>rsrces/Gold.png</file>
+        <file>rsrces/link.png</file>
+        <file>rsrces/lock-closed.png</file>
+        <file>rsrces/lock-open.png</file>
+        <file>rsrces/Matrix.png</file>
+        <file>rsrces/Purple.png</file>
+        <file>rsrces/Red.png</file>
+        <file>rsrces/Refresh.png</file>
+        <file>rsrces/Stats.png</file>
+        <file>rsrces/target.png</file>
+        <file>rsrces/Template.png</file>
+        <file>rsrces/zoom-in.png</file>
+    </qresource>
+    <qresource prefix="/resources/rsrces/icons" lang="en">
+        <file>rsrces/icons/Button Add.ico</file>
+        <file>rsrces/icons/Button Cancel.ico</file>
+        <file>rsrces/icons/Button Close.ico</file>
+        <file>rsrces/icons/Button Delete.ico</file>
+        <file>rsrces/icons/Button Fast Forward.ico</file>
+        <file>rsrces/icons/Button First.ico</file>
+        <file>rsrces/icons/Button Help.ico</file>
+        <file>rsrces/icons/Button Info.ico</file>
+        <file>rsrces/icons/Button Last.ico</file>
+        <file>rsrces/icons/Button Next.ico</file>
+        <file>rsrces/icons/Button Pause.ico</file>
+        <file>rsrces/icons/Button Play.ico</file>
+        <file>rsrces/icons/Button Previous.ico</file>
+        <file>rsrces/icons/Button Refresh.ico</file>
+        <file>rsrces/icons/Button Reload.ico</file>
+        <file>rsrces/icons/Button Rewind.ico</file>
+        <file>rsrces/icons/Button Stop.ico</file>
+    </qresource>
+</RCC>
