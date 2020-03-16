@@ -27,7 +27,7 @@
    limitations under the License.
  */
 
-#include <QPixmapCache>
+//#include <QPixmapCache>
 #include <cstdlib>
 
 //#include <cfs/arkhe/gcs/app/GCSApplication.hpp>

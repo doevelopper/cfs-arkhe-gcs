@@ -9,11 +9,11 @@ cc_library(
     name = "cfs-arkhe-gcs-main",
 
     srcs = [
-        "computer/science/CSList.cpp",
+        "cfs/arkhe/gcs/EnvironmentVariablesManager.cpp",
     ],
 
     hdrs = [
-        "computer/science/IContainer.hpp",
+        "cfs/arkhe/gcs/EnvironmentVariablesManager.hpp",
     ],
 
     copts = [
@@ -24,6 +24,7 @@ cc_library(
         "-llog4cxx",
 		"-D_REENTRANT",
         "-I/usr/local/include/",
+        '-fpic',
     ],
 
     linkopts = [
@@ -44,9 +45,10 @@ cc_library(
 
 cc_binary(
     name = "cfs-arkhe-gcs-main.bin",
-    srcs = ["computer/science/main.cpp"],
+    srcs = ["main.cpp"],
     copts = [
        "-std=c++17",
+       '-fpic',
     ],
 
     deps = [

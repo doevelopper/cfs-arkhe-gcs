@@ -1,111 +1,108 @@
 
-load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "cc_test")
-load("@rules_pkg//:pkg.bzl", "pkg_tar", "pkg_deb")
-load("@com_github_atlassian_bazel_tools//multirun:def.bzl", "multirun", "command")
+# load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "cc_test")
+# load("@rules_pkg//:pkg.bzl", "pkg_tar", "pkg_deb")
+# load("@com_github_atlassian_bazel_tools//multirun:def.bzl", "multirun", "command")
 
-cc_binary(
+# cc_binary(
 
-    name = "computer-science-integration-test.bin",
+    # name = "cfs-arkhe-gcs-integration-test.bin",
 
-    srcs = [
-        "computer/science/features/step_definitions/DummyTestSteps.cpp",
-        "computer/science/features/step_definitions/DummyTestSteps.hpp",
-        "computer/science/features/step_definitions/ItTest.cpp",
-        "computer/science/features/step_definitions/ItTest.hpp",
-    ],
+    # srcs = [
+        # "cfs/arkhe/gcs/features/step_definitions/step_definitions.cpp",
+    # ],
 
-    includes = [
-        ".",
-    ],
+    # includes = [
+        # ".",
+    # ],
 
-    copts = [
-        "-std=c++17",
-        "-DLOG_LEVEL=1",
-        "-lapr-1",
-        "-laprutil-1",
-        "-llog4cxx",
-        "-D_REENTRANT",
-        "-I/usr/local/include/",
-    ],
+    # copts = [
+        # "-std=c++17",
+        # "-DLOG_LEVEL=1",
+        # "-lapr-1",
+        # "-laprutil-1",
+        # "-llog4cxx",
+        # "-D_REENTRANT",
+        # "-I/usr/local/include/",
+    # ],
 
-    linkopts = [
-        "-L/usr/local/lib",
-        "-lapr-1",
-        "-laprutil-1",
-        "-llog4cxx",
-        "-lgtest",
-        "-lgmock",
-        "-lboost_thread",
-        "-lboost_system",
-        "-lboost_regex",
-        "-lboost_date_time",
-        "-lboost_program_options",
-        "-lboost_filesystem",
-        "-lcucumber-cpp",
-    ],
+    # linkopts = [
+        # "-L/usr/local/lib",
+        # "-lapr-1",
+        # "-laprutil-1",
+        # "-llog4cxx",
+        # "-lgtest",
+        # "-lgmock",
+        # "-lboost_thread",
+        # "-lboost_system",
+        # "-lboost_regex",
+        # "-lboost_date_time",
+        # "-lboost_program_options",
+        # "-lboost_filesystem",
+        # "-lcucumber-cpp",
+    # ],
 
-    deps = [
-        "//src/main/cpp:computer-science-main",
-    ],
-)
+    # deps = [
+        # "//src/main/cpp:cfs-arkhe-gcs-main",
+    # ],
+# )
 
-pkg_tar(
-    name = "computer-science-integration-test.bin-pkg",
-    # testonly = True,
-    srcs = [
-        ":computer-science-integration-test.bin",
-    ],
-    package_dir = "/opt/cs/bin",
-    strip_prefix = "/src/it",
-    tags = ["manual"],
-)
+# pkg_tar(
+    # name = "cfs-arkhe-gcs-integration-test.bin-pkg",
+    ##testonly = True,
+    # srcs = [
+        # ":cfs-arkhe-gcs-integration-test.bin",
+    # ],
+    # package_dir = "/opt/cs/bin",
+    # strip_prefix = "/src/it",
+    # tags = ["manual"],
+# )
 
-pkg_tar(
-    name = "computer-science-integration-test",
-    extension = "tar.gz",
-    deps = [
-        ":computer-science-integration-test.bin-pkg",
-    ],
-)
+# pkg_tar(
+    # name = "cfs-arkhe-gcs-integration-test",
+    # extension = "tar.gz",
+    # deps = [
+        # ":cfs-arkhe-gcs-integration-test.bin-pkg",
+    # ],
+# )
 
-command(
-    name = "cs-integration-test",
-    command = "//src/it:computer-science-integration-test.bin",
-    arguments = [
-        "--port",
-        "3902",
-    ],
-    environment = {
-        "ABC": "DEF",
-    },
-    raw_environment = {
-        "PATH": "$(pwd)/qa/atp",
-    },
-)
+# command(
+    # name = "cs-integration-test",
+    # command = "//src/it:cfs-arkhe-gcs-integration-test.bin",
+    # arguments = [
+        # "--port",
+        # "3902",
+    # ],
+    # environment = {
+        # "ABC": "DEF",
+    # },
+    # raw_environment = {
+        # "PATH": "$(pwd)/qa/atp",
+    # },
+# )
 
-command(
-    name = "cucumber-bin",
-    command = "cucumber",
-    arguments = [
-        "--out",
-        "Feature-Tests-Report.html",
-        "--strict",
-        "$(pwd)/features",
-    ],
-    environment = {
-        "ABC": "DEF",
-    },
-    raw_environment = {
-        "PATH": "$(pwd)/",
-    },
-)
+# command(
+    # name = "cucumber-bin",
+    # command = "cucumber",
+    # arguments = [
+        # "--out",
+        # "Feature-Tests-Report.html",
+        # "--strict",
+        # "$(pwd)/features",
+    # ],
+    # environment = {
+        # "ABC": "DEF",
+    # },
+    # raw_environment = {
+        # "PATH": "$(pwd)/",
+    # },
+# )
 
-multirun(
-    name = "integration-test",
-    commands = [
-        ":cs-integration-test",
-        ":cucumber-bin",
-    ],
-    #parallel = True,
-)
+# multirun(
+    # name = "integration-test",
+    # commands = [
+        # ":cs-integration-test",
+        # ":cucumber-bin",
+    # ],
+    ##parallel = True,
+# )
 

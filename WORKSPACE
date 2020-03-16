@@ -28,3 +28,11 @@ load("@com_github_atlassian_bazel_tools//multirun:deps.bzl", "multirun_dependenc
 
 multirun_dependencies()
 
+new_local_repository(
+    name = "qt",
+    path = "/opt/Qt/5.14.1/gcc_64/include/",
+    build_file = "src/main/resources/bazel/qt.BUILD"
+)
+
+load("//src/main/resources/bazel:qt.bzl", "qt_cc_library", "qt_ui_library")
+
