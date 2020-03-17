@@ -2,13 +2,18 @@
 # https://docs.bazel.build/versions/master/user-manual.html
 
 # +------------------------------------------------------------+
+# |                             Output                         |
+# +------------------------------------------------------------+
+query --output=label_kind
+
+# +------------------------------------------------------------+
 # | Startup Options                                            |
 # +------------------------------------------------------------+
 startup --batch_cpu_scheduling
 
 startup --host_jvm_args=-XX:-UseParallelGC
 
-# build --symlink_prefix=build_artifacts/
+build --symlink_prefix=target/ --worker_sandboxing
 # +------------------------------------------------------------+
 # | Test Configurations                                        |
 # +------------------------------------------------------------+

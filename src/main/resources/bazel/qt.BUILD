@@ -1,3 +1,6 @@
+
+# @see Qt Library Cross Dependencies at https://wiki.qt.io/Qt_Library_Cross_Dependencies
+
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
